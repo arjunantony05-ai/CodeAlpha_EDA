@@ -1,2 +1,32 @@
 # CodeAlpha_EDA
-Exploratory Data Analysis Internship Project – CodeAlpha
+
+Task 2 of the CodeAlpha Data Analytics Internship: exploratory data analysis of the
+book dataset scraped in `CodeAlpha_WebScraping`.
+
+## Questions asked first
+1. How are prices and ratings distributed? Any outliers?
+2. Does price relate to rating?
+3. Do categories differ in price?
+4. Is the rating mix the same across categories?
+5. What data-quality problems need fixing?
+
+## Method
+- Structure check: shape, types, missing values, duplicates.
+- Distributions and outliers: histogram + KDE, boxplot, IQR rule, skewness.
+- Hypothesis tests (non-parametric, because prices are not normally distributed):
+  Spearman correlation, Kruskal-Wallis (price by rating, price by category),
+  chi-square test of independence (rating by category).
+- Automatic data-issue detection (duplicates, sparse categories, low-variance columns).
+
+## Run
+```bash
+pip install -r requirements.txt
+python eda.py                # uses data/books.csv, falls back to data/sample_books.csv
+```
+Outputs: `outputs/eda_report.md` and 5 charts.
+
+## Findings
+**Fill this in from `outputs/eda_report.md` after running on the real scraped data**
+(the bundled `sample_books.csv` is synthetic, so its results are not meaningful).
+Cover: price distribution and outliers, whether price tracks rating, which categories
+are priciest, and the data issues you found.
