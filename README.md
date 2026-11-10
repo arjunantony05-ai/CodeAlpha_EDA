@@ -26,7 +26,8 @@ python eda.py                # uses data/books.csv, falls back to data/sample_bo
 Outputs: `outputs/eda_report.md` and 5 charts.
 
 ## Findings
-**Fill this in from `outputs/eda_report.md` after running on the real scraped data**
-(the bundled `sample_books.csv` is synthetic, so its results are not meaningful).
-Cover: price distribution and outliers, whether price tracks rating, which categories
-are priciest, and the data issues you found.
+Dataset: 1,000 books across 50 categories scraped from books.toscrape.com.
+
+- Average price is £35.07 and the average rating is 2.92 out of 5.
+- Every book is in stock, so the in_stock column adds no analytical value.
+- Hypothesis tests (Spearman, Kruskal-Wallis, chi-square) on price vs rating, price by category and rating by category are in eda_report.md, with the charts in this repo.
